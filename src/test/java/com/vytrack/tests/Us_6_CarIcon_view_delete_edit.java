@@ -14,7 +14,7 @@ public class Us_6_CarIcon_view_delete_edit extends TestBase {
     @Test
     public void verify_3_dots (){
         //login to homepage
-        VytrackUtils.loginAsStoreManager();
+        VytrackUtils.loginAsSalesManager();
 
         //wait until homepage loads
         BrowserUtils.waituntilTitleDisplay("Dashboard");
@@ -27,7 +27,7 @@ public class Us_6_CarIcon_view_delete_edit extends TestBase {
         homePage.vehicles.click();
 
 
-        BrowserUtils.sleep(10);
+        BrowserUtils.sleep(5);
 
         //wait until next page loads
         BrowserUtils.waituntilTitleDisplay("Entities");
@@ -36,7 +36,7 @@ public class Us_6_CarIcon_view_delete_edit extends TestBase {
 
         BrowserUtils.hover(homePage.threeDots);
 
-        //BrowserUtils.sleep(10);
+        BrowserUtils.sleep(5);
 
         Assert.assertTrue(homePage.viewIcon.isDisplayed());
         Assert.assertTrue(homePage.editIcon.isDisplayed());
