@@ -1,6 +1,6 @@
 package com.vytrack.tests;
 
-import com.vytrack.pages.ActivityPage;
+import com.vytrack.pages.US8ActivityPage;
 import com.vytrack.tests.base.TestBase;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.VytrackUtils;
@@ -17,7 +17,7 @@ public class Us_8_Create_Recurring extends TestBase {
       VytrackUtils.loginAsStoreManager();
 
       //creating the instance of the activity to call the locators
-      ActivityPage activityPage = new ActivityPage();
+      US8ActivityPage activityPage = new US8ActivityPage();
 
       BrowserUtils.waituntilTitleDisplay("Dashboard");
 
@@ -61,7 +61,7 @@ public class Us_8_Create_Recurring extends TestBase {
 
       VytrackUtils.loginAsSalesManager();
 
-      ActivityPage activityPage = new ActivityPage();
+      US8ActivityPage activityPage = new US8ActivityPage();
 
       BrowserUtils.waituntilTitleDisplay("Dashboard");
 

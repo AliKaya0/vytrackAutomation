@@ -1,15 +1,12 @@
 package com.vytrack.pages;
 
 import com.vytrack.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.awt.*;
-
-public class ActivityPage {
-     public ActivityPage() {
+public class US8ActivityPage {
+     public US8ActivityPage() {
 
           PageFactory.initElements(Driver.getDriver(), this);
      }

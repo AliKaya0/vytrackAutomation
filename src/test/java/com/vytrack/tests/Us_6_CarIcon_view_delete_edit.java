@@ -1,11 +1,9 @@
 package com.vytrack.tests;
 
-import com.vytrack.pages.HomePage;
+import com.vytrack.pages.US6FleetPage;
 import com.vytrack.tests.base.TestBase;
 import com.vytrack.utilities.BrowserUtils;
-import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.VytrackUtils;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,7 +18,7 @@ public class Us_6_CarIcon_view_delete_edit extends TestBase {
         BrowserUtils.waituntilTitleDisplay("Dashboard");
 
         //creating the instance of the Homepage to call the locators
-        HomePage homePage = new HomePage();
+        US6FleetPage homePage = new US6FleetPage();
 
         //hover over fleetTab using Browserutils.hover method and then click on vehicles
         BrowserUtils.hover(homePage.fleetTab);
