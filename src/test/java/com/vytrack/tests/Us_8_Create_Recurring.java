@@ -8,24 +8,26 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Us_Create_Recurring extends TestBase {
+public class Us_8_Create_Recurring extends TestBase {
 
    @Test
    public void create_activity() {
 
-
+      // user on the home page
       VytrackUtils.loginAsStoreManager();
 
+      //creating the instance of the activity to call the locators
       ActivityPage activityPage = new ActivityPage();
 
       BrowserUtils.waituntilTitleDisplay("Dashboard");
 
+      //hover over activitytab using Browserutils.hover method and then click on vehicles
       BrowserUtils.hover(activityPage.activity);
       activityPage.calenderEvent.click();
 
 
-
-      BrowserUtils.sleep(5);
+      //wait until next page loads
+     // BrowserUtils.sleep(5);
 
       //wait until next page loads
       BrowserUtils.waituntilTitleDisplay("Calendar Events");
@@ -33,9 +35,10 @@ public class Us_Create_Recurring extends TestBase {
       activityPage.createCalender.click();
       BrowserUtils.waituntilTitleDisplay("Calendar event");
 
+      //check the repeat button
       activityPage.repaetcheck.click();
 
-
+      //verify number 1 is display
       String expectedResult = "1";
       String actualResult = activityPage.repeatEveryInputBox.getAttribute("value");
 
@@ -78,7 +81,7 @@ public class Us_Create_Recurring extends TestBase {
 
       activityPage.repeatEveryInputBox.sendKeys(Keys.BACK_SPACE + ""+Keys.ENTER);
 
-
+      //verify error message
       String expectedResult = "This value should not be blank.";
       String actualResult = activityPage.errorMessage.getText();
 
@@ -88,7 +91,7 @@ public class Us_Create_Recurring extends TestBase {
       Assert.assertTrue(expectedResult.equals(actualResult));
 
 
-      //BrowserUtils.hover(activityPage.calenderEvent);
+
 
       BrowserUtils.sleep(2);
 
