@@ -19,10 +19,9 @@ import java.util.concurrent.TimeUnit;
 
 public class US56_Access_To_Vehicle_Contracts {
 
-    @Test
-    public void AccessToVehContracts() throws InterruptedException {
-        Point targetposition = new Point(0, 0);
-        Driver.getDriver().manage().window().setPosition(targetposition);
+    @Test(priority = 1)//
+    public void AccessToVehContracts_AC1() throws InterruptedException {
+
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         VytrackUtils.loginAsDriver();
 
@@ -56,24 +55,29 @@ public class US56_Access_To_Vehicle_Contracts {
         WebElement logout = Driver.getDriver().findElement(By.xpath("//*[contains(text(), 'Logout')]"));
 
 
-       profileMenu.click();
+        profileMenu.click();
         logout.click();
+    }
+
+
+
+
+    @Test(priority = 2)
+        public void AccessToVehContracts_AC2() throws InterruptedException {
+
+
         Driver.getDriver().manage().window().maximize();
 
 
 
-
-
-
-
-            VytrackUtils.loginAsStoreManager();
+        VytrackUtils.loginAsStoreManager();
             Thread.sleep(5000);
 
             WebElement firstMenu2 = Driver.getDriver().findElement(By.xpath("//*[contains(text(), '    Fleet')]"));
 
             WebElement vehicleContractor2 = Driver.getDriver().findElement(By.xpath("//*[.=\'Vehicle Contracts\']"));
 
-            //Actions action = new Actions(Driver.getDriver());
+            Actions action = new Actions(Driver.getDriver());
             //move the mouse on fleet menu for drop dropdown submenu menu
             action.moveToElement(firstMenu2).build().perform();
 
